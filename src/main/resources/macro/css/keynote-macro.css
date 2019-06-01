@@ -1,0 +1,25 @@
+.keynote-target {
+    border: none;
+    display: none;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: #FFF
+}
+
+.keynote-speakerNotes {
+    background-color: aliceblue;
+    padding: 0.5em;
+    margin: 0.5em 0;
+}
+
+#title-text a.launch-keynote {
+    opacity: 0.5;
+    color: #FFF;
+}
+
+#title-text:hover a.launch-keynote {
+    opacity: 1;
+}

@@ -1,0 +1,79 @@
+<atlassian-plugin key="${atlassian.plugin.key}" name="${project.name}" plugins-version="2">
+	<plugin-info>
+		<description>${project.description}</description>
+		<version>${project.version}</version>
+		<vendor name="${project.organization.name}" url="${project.organization.url}"/>
+		<param name="plugin-icon">keynote-macro/images/pluginIcon.png</param>
+		<param name="plugin-logo">keynote-macro/images/pluginLogo.png</param>
+	</plugin-info>
+
+	<!-- i18n resource -->
+	<resource type="i18n" name="i18n" location="keynote-macro"/>
+
+	<!-- web resources for page -->
+	<web-resource key="keynote-macro-resources" name="keynote-macro Web Resources">
+		<!-- depends on jQuery/AJS -->
+		<dependency>com.atlassian.auiplugin:ajs</dependency>
+		<resource type="download" name="keynote-macro.css" location="/macro/css/keynote-macro.css"/>
+		<resource type="download" name="keynote-macro.js" location="/macro/js/keynote-macro.js"/>
+	</web-resource>
+
+	<web-resource key="keynote-iframe-resources" name="keynote-macro Web Resources">
+		<resource type="download" name="iframe" location="/keynote-macro/iframe"/>
+	</web-resource>
+
+	<resource type="download" key="iframe" name="iframe/" location="keynote-macro/iframe"/>
+	<resource type="download" key="icons" name="icons/" location="keynote-macro/icons"/>
+
+	<xhtml-macro key="keynote-macro"
+	             name="keynote"
+	             class="com.github.confluence.macro.keynote.Keynote"
+	             icon="/download/resources/com.github.confluence.macro.keynote.keynote-macro/icons/keynote.png">
+		<description key="com.github.confluence.macro.keynote.keynote-macro.keynote.desc"/>
+		<category name="formatting"/>
+		<parameters>
+			<parameter name="transition" multiple="false" type="enum" required="true" default="slide">
+				<value name="none"/>
+				<value name="slide"/>
+				<value name="zoom"/>
+			</parameter>
+			<parameter name="theme" multiple="false" type="enum" required="true" default="beige">
+				<value name="beige"/>
+				<value name="sky"/>
+			</parameter>
+			<parameter name="shortcuts" multiple="false" type="boolean" default="true"/>
+		</parameters>
+	</xhtml-macro>
+	<xhtml-macro key="keynote-speakernotes-macro"
+	             name="keynote-speakernotes"
+	             class="com.github.confluence.macro.keynote.KeynoteSpeakerNotes"
+	             icon="/download/resources/com.github.confluence.macro.keynote.keynote-macro/icons/speaker-notes.png">
+		<description key="com.github.confluence.macro.keynote.keynote-macro.speakernotes.desc"/>
+		<category name="formatting"/>
+		<parameters/>
+	</xhtml-macro>
+	<xhtml-macro key="keynote-block-fragment-macro"
+	             name="keynote-block-fragment"
+	             class="com.github.confluence.macro.keynote.KeynoteBlockFragment"
+	             icon="/download/resources/com.github.confluence.macro.keynote.keynote-macro/icons/fragment.png">
+		<description key="com.github.confluence.macro.keynote.keynote-macro.keynote-block-fragment.desc"/>
+		<category name="formatting"/>
+		<parameters>
+			<parameter name="transition" multiple="false" type="enum" required="true" default="slide">
+				<value name="grow"/>
+				<value name="shrink"/>
+				<value name="fade-up"/>
+				<value name="fade-down"/>
+				<value name="fade-left"/>
+				<value name="fade-right"/>
+				<value name="fade-out"/>
+				<value name="fade-in-then-out"/>
+				<value name="fade-in-then-semi-out"/>
+				<value name="highlight-current-blue"/>
+				<value name="highlight-red"/>
+				<value name="highlight-green"/>
+				<value name="highlight-blue"/>
+			</parameter>
+		</parameters>
+	</xhtml-macro>
+</atlassian-plugin>
