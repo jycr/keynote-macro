@@ -9,10 +9,18 @@
     background-color: #FFF
 }
 
+.keynote {
+    box-shadow: 0 0 20px -5px #000;
+    padding: 1em;
+    text-align: center;
+    margin: 1em;
+}
+
 .keynote-speakerNotes {
     background-color: aliceblue;
     padding: 0.5em;
     margin: 0.5em 0;
+    text-align: left;
 }
 
 #title-text a.launch-keynote {
@@ -23,3 +31,4 @@
 #title-text:hover a.launch-keynote {
     opacity: 1;
 }
+

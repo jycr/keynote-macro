@@ -7,7 +7,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.github.confluence.macro.keynote</groupId>
 	<artifactId>keynote-macro</artifactId>
-	<version>1.0.0</version>
+	<version>1.0.1</version>
 
 	<organization>
 		<name>Keynote Macro</name>
